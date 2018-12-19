@@ -1,7 +1,17 @@
+"""
+    funzt nur mit python2.7
+"""
+
 from __future__ import print_function
 import midi
+import sys
 
-pattern = midi.read_midifile("/home/xhta/Music/MIDI/MAPS_MUS-mond_1_SptkBGAm.mid")
+if (not ( sys.argv[1].endswith(".mid"))): 
+    print ("invalid MIDI file, extension must be mid")
+    exit()
 
-mf = open("/home/xhta/Music/MIDI/mond_MIDI.txt", "w")
+pattern = midi.read_midifile(sys.argv[1])	# muss die Endung .mid haben 
+
+mf = open(sys.argv[1].replace(".mid", "_MIDI.txt"), "w")
+
 print (pattern, file = mf)
