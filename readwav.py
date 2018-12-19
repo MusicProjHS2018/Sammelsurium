@@ -4,7 +4,7 @@ import sys
 import numpy as np
 
 if (not ( sys.argv[1].endswith(".wav"))): 
-    print ("invalid MIDI file, extension must be wav")
+    print ("invalid wav file, extension must be wav")
     exit()
 
 fs, data = wavfile.read(sys.argv[1])	# muss die Endung wav haben
